@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>demo05.conf</file>
+        <file>demo05.logger.conf</file>
+    </qresource>
+</RCC>

@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     alog::logger().start();
     alog::logger().addSaverStdOut(alog::Level::Info);
 
-    log_info << "Logger start";
+    log_info << "Logger start 'Demo 01'";
     log_info << "Hello world";
     log_info << "Logger stop";
 
