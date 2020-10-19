@@ -28,7 +28,5 @@ Product {
         "src/shared/shared/thread/thread_base.h",
         "src/shared/shared/thread/thread_utils.cpp",
         "src/shared/shared/thread/thread_utils.h",
-        "src/shared/shared/utils.cpp",
-        "src/shared/shared/utils.h",
     ]
 }
