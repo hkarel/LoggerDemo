@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     QFile confFile;
     QByteArray conf;
 
+    // Создаем для демонстрационные конфиг-файлы
     confFile.setFileName("://demo05.conf");
     confFile.open(QIODevice::ReadOnly);
     conf = confFile.readAll();
