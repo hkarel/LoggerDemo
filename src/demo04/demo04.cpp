@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
         FilterModulePtr filter {new FilterModule};
         filter->setMode(Filter::Mode::Include);
         filter->addModule("Module1");
+        filter->setFilteringNoNameModules(false);
         saver->addFilter(filter);
 
         logger().addSaver(saver);
