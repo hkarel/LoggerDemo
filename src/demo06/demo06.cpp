@@ -70,6 +70,10 @@ int main(int argc, char *argv[])
     log_info << log_format("%?%? value", 1, 2, 3);
     log_info << log_format("%?%? value", 1, 2, 3, 4);
 
+    const char* char_text = "char text0";
+    log_info << log_format("%? value", char_text);
+    log_info << log_format("%? value", "char text1");
+
     log_info << "Logger stop";
 
     alog::logger().stop();
