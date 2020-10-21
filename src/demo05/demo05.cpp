@@ -2,8 +2,8 @@
 #include "shared/logger/logger.h"
 #include "shared/logger/config.h"
 #include "shared/logger/format.h"
-#include "shared/qt/config.h"
-#include "shared/qt/logger_config.h"
+#include "shared/config/appl_conf.h"
+#include "shared/config/logger_conf.h"
 #include "shared/qt/logger_operators.h"
 
 #include <QtCore>
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     QFile confFile;
     QByteArray conf;
 
-    // Создаем для демонстрационные конфиг-файлы
+    // Создаем демонстрационные конфиг-файлы
     confFile.setFileName("://demo05.conf");
     confFile.open(QIODevice::ReadOnly);
     conf = confFile.readAll();
@@ -80,6 +80,9 @@ int main(int argc, char *argv[])
 
     log_info << "Logger start 'Demo 05'";
     logger().flush();
+
+    log_info << "See config file: /tmp/logger-demo05.conf";
+    log_info << "See logger-config file: /tmp/logger-demo05.logger.conf";
 
     SaverList savers = logger().savers(false);
     for (Saver* saver : savers)

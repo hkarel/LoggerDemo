@@ -4,14 +4,16 @@ import QbsUtl
 Product {
     name: "SharedLib"
     targetName: "shared"
-    condition: true
 
     type: "staticlibrary"
 
     Depends { name: "cpp" }
     Depends { name: "cppstdlib" }
     Depends { name: "Yaml" }
-    Depends { name: "Qt"; submodules: ["core", "network"] }
+    Depends { name: "Qt"; submodules: ["core", "network"]; required: false}
+
+    moduleProviders.Qt.qmakeFilePaths: "/invalid"
+    condition: Qt.core.present
 
     cpp.defines: project.cppDefines
     cpp.cxxFlags: project.cxxFlags //.concat(["-fPIC"])
@@ -36,6 +38,10 @@ Product {
     ]
 
     files: [
+        "shared/config/appl_conf.cpp",
+        "shared/config/appl_conf.h",
+        "shared/config/logger_conf.cpp",
+        "shared/config/logger_conf.h",
         "shared/config/yaml_config.cpp",
         "shared/config/yaml_config.h",
         "shared/logger/config.cpp",
@@ -43,10 +49,6 @@ Product {
         "shared/logger/format.h",
         "shared/logger/logger.cpp",
         "shared/logger/logger.h",
-        "shared/qt/config.cpp",
-        "shared/qt/config.h",
-        "shared/qt/logger_config.cpp",
-        "shared/qt/logger_config.h",
         "shared/qt/logger_operators.cpp",
         "shared/qt/logger_operators.h",
         "shared/thread/thread_base.cpp",
