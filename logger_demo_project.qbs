@@ -122,4 +122,14 @@ Project {
         ])
     }
 
+    DemoBase {
+        name: "Demo 07"
+        targetName: "demo07"
+        condition: true
+
+        files: baseFiles.concat([
+            "src/demo07/demo07.cpp",
+        ])
+    }
+
 }
