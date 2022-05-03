@@ -4,15 +4,13 @@ import "demo_base.qbs" as DemoBase
 Project {
     name: "LoggerDemo (Project)"
 
-    minimumQbsVersion: "1.15.0"
+    minimumQbsVersion: "1.19.0"
     qbsSearchPaths: ["qbs"]
 
     property var cppDefines: {
-        var def = [];
-
-        if (qbs.buildVariant === "release")
-            def.push("NDEBUG");
-
+        var def = [
+            "LOGGER_LESS_SNPRINTF",
+        ];
         return def;
     }
 
@@ -24,7 +22,7 @@ Project {
         "-Wno-unused-parameter",
         "-Wno-variadic-macros",
     ]
-    property string cxxLanguageVersion: "c++14"
+    property string cxxLanguageVersion: "c++17"
 
     references: [
         "src/shared/shared.qbs",
