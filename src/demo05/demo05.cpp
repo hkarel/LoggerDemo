@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     }
 
     // Создаем дополнительные сэйверы для логгера
-    alog::configExtensionSavers();
+    alog::configExtendedSavers();
     alog::printSaversInfo();
 
     log_info << "Logger start 'Demo 05'";
