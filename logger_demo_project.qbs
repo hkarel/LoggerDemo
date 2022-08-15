@@ -4,13 +4,11 @@ import "demo_base.qbs" as DemoBase
 Project {
     name: "LoggerDemo (Project)"
 
-    minimumQbsVersion: "1.19.0"
+    minimumQbsVersion: "1.20.0"
     qbsSearchPaths: ["qbs"]
 
     property var cppDefines: {
-        var def = [
-            "LOGGER_LESS_SNPRINTF",
-        ];
+        var def = [];
         return def;
     }
 
