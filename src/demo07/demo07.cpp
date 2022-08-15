@@ -11,6 +11,8 @@ int main(int argc, char *argv[])
 
     std::string s1 = ".../docker/example1.py";
     std::string s2 = ".../docker/example2.py";
+    std::string s3 = "example3.py";
+    std::string s4 = "";
 
 //    const char* f1 = alog::__file__cache(s1.c_str());
 //    const char* f2 = alog::__file__cache(s2.c_str());
@@ -32,6 +34,12 @@ int main(int argc, char *argv[])
 
     file = alog::__file__cache(s2);
     alog::logger().info(file, 0, 25, "Docker") << "Message 5";
+
+    file = alog::__file__cache(s3);
+    alog::logger().info(file, 0, 31, "Docker") << "Message 6";
+
+    file = alog::__file__cache(s4);
+    alog::logger().info(file, 0, 35, "Docker") << "Message 7";
 
     log_info << "Logger stop";
 
